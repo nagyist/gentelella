@@ -166,28 +166,30 @@ Need advanced features, dedicated support, and production-ready code? Explore ou
 
 ## Documentation
 
-Comprehensive docs in [`docs/`](docs/) covering every part of v4:
+Full docs live at **<https://gentelella.colorlib.com/docs/>** — covering every part of v4:
 
 | Topic | Doc |
 | --- | --- |
-| Setup, build, deploy | [getting-started](docs/getting-started.md) |
-| Directory layout | [project-structure](docs/project-structure.md) |
-| Shell injection + lazy modules | [architecture](docs/architecture.md) |
-| Tokens, dark mode, theme generator | [theming](docs/theming.md) |
-| Adding pages + sidebar entries | [pages](docs/pages.md) |
-| Buttons, cards, badges, grids | [components](docs/components.md) |
-| ECharts factories | [charts](docs/charts.md) |
-| DataTables, row selection, CSV | [tables](docs/tables.md) |
-| Inputs, validation, custom controls | [forms](docs/forms.md) |
-| `showModal`, `showToast`, `openMenu` | [overlays](docs/overlays.md) |
-| ⌘K | [command-palette](docs/command-palette.md) |
-| Inbox / kanban / calendar / files / settings | [app-modules](docs/app-modules.md) |
-| Service worker, manifest, offline | [pwa](docs/pwa.md) |
-| Hosts, subpath, cache headers | [deployment](docs/deployment.md) |
-| IntelliSense via `.d.ts` | [typescript](docs/typescript.md) |
-| Seed vs HTTP backend (`?api=1`) | [data-adapter](docs/data-adapter.md) |
-| Coming from old Gentelella | [migration-v2](docs/migration-v2.md) |
-| Common questions | [FAQ](docs/faq.md) |
+| Setup, build, deploy | [getting-started](https://gentelella.colorlib.com/docs/getting-started/) |
+| Directory layout | [project-structure](https://gentelella.colorlib.com/docs/project-structure/) |
+| Shell injection + lazy modules | [architecture](https://gentelella.colorlib.com/docs/architecture/) |
+| Tokens, dark mode, theme generator | [theming](https://gentelella.colorlib.com/docs/theming/) |
+| Adding pages + sidebar entries | [adding-pages](https://gentelella.colorlib.com/docs/adding-pages/) |
+| Component playground | [playground](https://gentelella.colorlib.com/docs/playground/) |
+| ECharts factories | [echarts](https://gentelella.colorlib.com/docs/echarts/) |
+| DataTables, row selection, CSV | [tables](https://gentelella.colorlib.com/docs/tables/) |
+| Inputs, validation, custom controls | [forms](https://gentelella.colorlib.com/docs/forms/) |
+| `showModal`, `showToast`, `openMenu` | [overlays](https://gentelella.colorlib.com/docs/overlays/) |
+| ⌘K | [command palette](https://gentelella.colorlib.com/docs/palette/) |
+| Inbox client | [inbox](https://gentelella.colorlib.com/docs/inbox/) |
+| Kanban board | [kanban](https://gentelella.colorlib.com/docs/kanban/) |
+| Vite multi-page setup | [vite-build](https://gentelella.colorlib.com/docs/vite-build/) |
+| Service worker, manifest, offline | [pwa](https://gentelella.colorlib.com/docs/pwa/) |
+| Hosts, subpath, cache headers | [deployment](https://gentelella.colorlib.com/docs/deployment/) |
+| IntelliSense via `.d.ts` | [typescript](https://gentelella.colorlib.com/docs/typescript/) |
+| Seed vs HTTP backend (`?api=1`) | [data-adapter](https://gentelella.colorlib.com/docs/data-adapter/) |
+| Coming from old Gentelella | [migration-v2](https://gentelella.colorlib.com/docs/migration-v2/) |
+| Common questions | [FAQ](https://gentelella.colorlib.com/docs/faq/) |
 
 ## Quick start
 
@@ -299,7 +301,6 @@ production/                    58 entry HTML pages — one per surface
 public/                        Static assets copied as-is
 dist/                          Build output (gitignored)
 types/gentelella.d.ts          TypeScript declarations
-docs/getting-started.md        5-minute setup guide
 vite.config.js                 Multi-page Vite config
 ```
 
