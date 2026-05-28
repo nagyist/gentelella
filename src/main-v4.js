@@ -80,6 +80,20 @@ document.addEventListener('click', (e) => {
   tab.classList.add('active');
 });
 
+// Button groups with [data-group]: radio-style single-select. Click sets
+// .active on the clicked button and clears its siblings in the same group.
+// Opt-in via data-group so plain action button groups are unaffected.
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.btn-group[data-group] > .btn');
+  if (!btn) {return;}
+  btn.parentElement.querySelectorAll('.btn').forEach((b) => {
+    b.classList.remove('active');
+    b.setAttribute('aria-pressed', 'false');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-pressed', 'true');
+});
+
 // Card option buttons → popover menu.
 // Calendar nav buttons (prev/next month) are also .card-opt-btn but live
 // inside .calendar-toolbar; calendar.js stops propagation on those clicks

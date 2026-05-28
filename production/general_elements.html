@@ -69,11 +69,11 @@
         <div>
           <div class="divider-label">Button group · Dropdown</div>
           <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
-            <div class="btn-group" role="group">
-              <button class="btn btn-outline active">Day</button>
-              <button class="btn btn-outline">Week</button>
-              <button class="btn btn-outline">Month</button>
-              <button class="btn btn-outline">Year</button>
+            <div class="btn-group" role="group" data-group="period" aria-label="Time period">
+              <button class="btn btn-outline active" aria-pressed="true">Day</button>
+              <button class="btn btn-outline" aria-pressed="false">Week</button>
+              <button class="btn btn-outline" aria-pressed="false">Month</button>
+              <button class="btn btn-outline" aria-pressed="false">Year</button>
             </div>
             <button class="btn btn-outline" id="dropdown-btn">Actions <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg></button>
           </div>
