@@ -1,7 +1,10 @@
 # Gentelella v4 — Free Admin Dashboard Template
 
+[![npm version](https://img.shields.io/npm/v/gentelella.svg?logo=npm&label=npm)](https://www.npmjs.com/package/gentelella)
+[![npm downloads](https://img.shields.io/npm/dw/gentelella.svg?logo=npm&label=downloads)](https://www.npmjs.com/package/gentelella)
+[![jsDelivr](https://img.shields.io/jsdelivr/npm/hw/gentelella.svg?logo=jsdelivr&label=jsDelivr)](https://www.jsdelivr.com/package/npm/gentelella)
+[![GitHub stars](https://img.shields.io/github/stars/ColorlibHQ/gentelella?style=flat&logo=github&label=stars)](https://github.com/ColorlibHQ/gentelella/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.txt)
-[![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)](CHANGELOG.md)
 [![Made with Vite 8](https://img.shields.io/badge/Vite-8-646cff.svg?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![No jQuery](https://img.shields.io/badge/jQuery-free-success.svg)](#tech-stack)
 [![PWA Ready](https://img.shields.io/badge/PWA-ready-5a0fc8.svg)](#tech-stack)
