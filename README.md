@@ -165,7 +165,7 @@ Need advanced features, dedicated support, and production-ready code? Explore ou
 - **Inter** font from Google Fonts
 - **Playwright** (devDep) — for the screenshot pipeline and smoke tests
 
-3 production deps, 9 dev deps, **~178 MB `node_modules`** (was ~600 MB on the old Gentelella).
+3 production deps, 10 dev deps, **~178 MB `node_modules`** (was ~600 MB on the old Gentelella).
 
 ## Documentation
 

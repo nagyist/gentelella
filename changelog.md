@@ -2,6 +2,59 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.2] - 2026-06-17
+
+Dependency refresh. Toolchain bumps to latest minor/patch; no source or API changes. Build verified (5 s, identical chunk layout), `eslint src/` clean, `npm audit` reports 0 vulnerabilities.
+
+### Changed
+
+- **Dev dependencies** bumped to latest:
+  - `@playwright/test`, `playwright`: 1.60.0 → 1.61.0
+  - `eslint`: 10.4.0 → 10.5.0
+  - `prettier`: 3.8.3 → 3.8.4
+  - `sass`: 1.99.0 → 1.101.0
+  - `terser`: 5.47.1 → 5.48.0
+  - `vite`: 8.0.13 → 8.0.16
+- Runtime dependencies (`datatables.net` 2.3.8, `echarts` 6.1.0, `leaflet` 1.9.4) and the remaining dev deps (`@eslint/js` 10.0.1, `eslint-config-prettier` 10.1.8, `rollup-plugin-visualizer` 7.0.1) were already at their latest published versions — no change.
+
+## [4.0.1] - 2026-06-11
+
+Distribution fix plus the v4 documentation and AI-tooling pass.
+
+### Fixed
+
+- **Ship `dist/` in the npm tarball.** 4.0.0 published before `dist/` was in the `files` field, so every `cdn.jsdelivr.net/npm/gentelella@4/dist/*` URL in the docs 404'd. 4.0.1 ships the pre-built `dist/` so the demo HTML pages and assets are reachable straight off jsDelivr. The `prepublishOnly` hook rebuilds `dist/` before publish, so the tarball always matches the current source.
+- **Dropzone alignment** on the file-upload page (#985).
+- **Button-group active border** + radio-style toggle (#986).
+- Broken Apex and Zenith DashboardPack promo URLs.
+- `showModal`/`showToast` API usage in the AI helper files.
+
+### Added
+
+- **AI tool support** and **comprehensive v4 documentation** — cross-tool guidance files plus a full docs pass; README links out to the hosted docs.
+- **DashboardPack premium templates** promo section in the README.
+
+### Changed
+
+- **Docs moved off the local `/docs` tree** to <https://gentelella.colorlib.com/docs>; a Docs link was added to the topbar.
+- README screenshots now link to the live demo pages.
+
+## [4.0.0] - 2026-05-20
+
+First stable v4 release. Drops the `-rc.2` suffix; content is rc.2 plus a dependency refresh.
+
+### Changed
+
+- **Dependencies** bumped to latest minor/patch, with a moderate `brace-expansion` advisory resolved via `npm audit fix`:
+  - `@playwright/test`, `playwright`: 1.48.0 → 1.60.0
+  - `eslint`: 10.2.1 → 10.4.0
+  - `prettier`: 3.7.4 → 3.8.3
+  - `sass`: 1.97.2 → 1.99.0
+  - `terser`: 5.44.1 → 5.47.1
+  - `vite`: 8.0.10 → 8.0.13
+  - `datatables.net`: 2.3.6 → 2.3.8
+  - `echarts`: 6.0.0 → 6.1.0
+
 ## [4.0.0-rc.2] - 2026-05-05
 
 Polish pass on top of rc.1: a real mobile responsive sweep, npm-package-ready distribution metadata with TypeScript declarations, a page generator script, an optional API-hydration data adapter, and quality-of-life fixes.
