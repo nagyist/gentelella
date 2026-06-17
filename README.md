@@ -415,7 +415,7 @@ No backend. No environment variables required (other than `BASE_PATH` if you're 
 
 ## Roadmap
 
-Shipped in `4.0.0` — full list in [`CHANGELOG.md`](CHANGELOG.md). Still planned:
+Shipped in `4.0.0` — full list in [`changelog.md`](changelog.md). Still planned:
 
 - **Image optimization** — compress `public/images/*.jpg` and ship AVIF + JPG fallback
 - **Lighthouse audit** + tuning to 95+ Performance / 100 A11y / 100 SEO / 100 PWA
