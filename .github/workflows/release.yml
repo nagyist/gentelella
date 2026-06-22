@@ -1,0 +1,62 @@
+# Publish to npm with build provenance when a GitHub Release is published.
+#
+# Provenance (`--provenance`) attaches a signed, verifiable record of where and
+# how the tarball was built. It shows up as the "Provenance" badge on
+# npmjs.com/package/gentelella and requires `id-token: write` (Sigstore/OIDC).
+#
+# The package's `prepublishOnly` hook runs `npm run build`, so `dist/` is
+# rebuilt fresh inside the runner before publish — the tarball always matches
+# the tagged source.
+#
+# ── One-time setup ──────────────────────────────────────────────────────────
+# This workflow authenticates with an npm automation token. Add it once:
+#   1. npmjs.com → Access Tokens → Generate → "Automation" (or a Granular token
+#      with read+write on the `gentelella` package).
+#   2. GitHub repo → Settings → Secrets and variables → Actions → New secret
+#      named `NPM_TOKEN`.
+#
+# Prefer no token? npm Trusted Publishing (OIDC) removes the secret entirely:
+#   npmjs.com → gentelella → Settings → Trusted Publisher → GitHub Actions,
+#   repo `ColorlibHQ/gentelella`, workflow `release.yml`. Then delete the
+#   `NODE_AUTH_TOKEN` env line below — `id-token: write` alone authenticates.
+#
+# ── Release flow ────────────────────────────────────────────────────────────
+# Bump the version + update changelog, commit, push, then publish a GitHub
+# Release on the matching tag. This workflow publishes the version in
+# package.json at that tag. Re-running for an already-published version fails
+# safely ("cannot publish over previously published version").
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # required for npm build provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
+
+      # Skip the Playwright Chromium download — publishing doesn't need a
+      # browser, saving ~170 MB of install time per run.
+      - run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+
+      - run: npm run lint
+
+      # `prepublishOnly` rebuilds dist/ before the tarball is packed.
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
